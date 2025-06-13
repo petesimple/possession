@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Possession Air Hockey</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    .scoreboard {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .player {
+      flex: 1;
+      background: #222;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .orange {
+      background-color: orange;
+      color: #000;
+    }
+    .blue {
+      background-color: #00aaff;
+      color: #fff;
+    }
+    .score {
+      font-size: 4rem;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #swapButton {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="scoreboard" id="scoreboard">
+    <div class="player orange" id="orangePlayer">
+      <h2>Defense (Orange)</h2>
+      <div class="score" id="orangeScore">0</div>
+      <button onclick="incrementScore('orange')">+ Possession</button>
+    </div>
+    <div class="player blue" id="bluePlayer">
+      <h2>Offense (Blue)</h2>
+      <div class="score" id="blueScore">0</div>
+      <button onclick="incrementScore('blue')">+ Goal</button>
+    </div>
+  </div>
+  <button id="swapButton" onclick="swapSides()">🔁 Swap Sides</button>
+
+  <script>
+    let orangeScore = 0;
+    let blueScore = 0;
+
+    function incrementScore(player) {
+      if (player === 'orange' && orangeScore < 14) {
+        orangeScore++;
+        document.getElementById('orangeScore').textContent = orangeScore;
+        if (orangeScore === 14) alert('Orange (Defense) wins!');
+      } else if (player === 'blue' && blueScore < 7) {
+        blueScore++;
+        document.getElementById('blueScore').textContent = blueScore;
+        if (blueScore === 7) alert('Blue (Offense) wins!');
+      }
+    }
+
+    function swapSides() {
+      const scoreboard = document.getElementById('scoreboard');
+      const [orangeDiv, blueDiv] = scoreboard.children;
+      scoreboard.innerHTML = '';
+      scoreboard.appendChild(blueDiv);
+      scoreboard.appendChild(orangeDiv);
+    }
+  </script>
+</body>
+</html>
