@@ -71,6 +71,19 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+    details {
+      margin-top: 40px;
+      background: #222;
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+    }
+    summary {
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -91,6 +104,18 @@
     <button id="swapButton" onclick="swapSides()">🔁 Swap Sides</button>
     <button id="resetButton" onclick="resetScores()">🔄 Reset Scores</button>
   </div>
+
+  <details>
+    <summary>📘 How to Play Possession</summary>
+    <ul>
+      <li>Two players: Blue (Offense) and Orange (Defense)</li>
+      <li>Blue scores points by making goals — first to 7 wins</li>
+      <li>Orange scores by gaining possession — first to 14 wins</li>
+      <li>Tap the corresponding button to add a goal or possession</li>
+      <li>Use "Swap Sides" to flip players visually if they switch roles</li>
+      <li>Use "Reset Scores" to start a new game</li>
+    </ul>
+  </details>
 
   <script>
     if ('serviceWorker' in navigator) {
