@@ -39,6 +39,7 @@
       border-radius: 10px;
       padding: 20px;
       text-align: center;
+      cursor: pointer;
     }
     .orange {
       background-color: orange;
@@ -89,15 +90,13 @@
 <body>
   <img src="possessionlogoLONG.png" alt="Possession Logo" class="logo" />
   <div class="scoreboard" id="scoreboard">
-    <div class="player orange" id="orangePlayer">
+    <div class="player orange" id="orangePlayer" onclick="incrementScore('orange')">
       <h2>Defense (14)</h2>
       <div class="score" id="orangeScore">0</div>
-      <button onclick="incrementScore('orange')">+ Possession</button>
     </div>
-    <div class="player blue" id="bluePlayer">
+    <div class="player blue" id="bluePlayer" onclick="incrementScore('blue')">
       <h2>Offense (7)</h2>
       <div class="score" id="blueScore">0</div>
-      <button onclick="incrementScore('blue')">+ Goal</button>
     </div>
   </div>
   <div class="controls">
@@ -111,7 +110,7 @@
       <li>Two players: Blue (Offense) and Orange (Defense)</li>
       <li>Blue scores points by making goals — first to 7 wins</li>
       <li>Orange scores by gaining possession — first to 14 wins</li>
-      <li>Tap the corresponding button to add a goal or possession</li>
+      <li>Tap the colored side to add a goal or possession</li>
       <li>Use "Swap Sides" to flip players visually if they switch roles</li>
       <li>Use "Reset Scores" to start a new game</li>
     </ul>
