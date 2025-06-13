@@ -89,19 +89,38 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .label {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.subtext {
+  font-size: 1rem;
+  opacity: 0.9;
+}
   </style>
 </head>
 <body>
   <img src="possessionlogoLONG.png" alt="Possession Logo" class="logo" />
   <div class="scoreboard" id="scoreboard">
     <div class="player orange" id="orangePlayer" onclick="incrementScore('orange')">
-      <h2>Defense (14)</h2>
-      <div class="score" id="orangeScore">0</div>
-    </div>
-    <div class="player blue" id="bluePlayer" onclick="incrementScore('blue')">
-      <h2>Offense (7)</h2>
-      <div class="score" id="blueScore">0</div>
-    </div>
+  <div class="label">
+    <div class="title">Defense</div>
+    <div class="subtext">(14)</div>
+  </div>
+  <div class="score" id="orangeScore">0</div>
+</div>
+
+<div class="player blue" id="bluePlayer" onclick="incrementScore('blue')">
+  <div class="label">
+    <div class="title">Offense</div>
+    <div class="subtext">(7)</div>
+  </div>
+  <div class="score" id="blueScore">0</div>
+</div>
   </div>
   <div class="controls">
     <button id="swapButton" onclick="swapSides()">🔁 Swap Sides</button>
