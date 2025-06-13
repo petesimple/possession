@@ -51,10 +51,15 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    #swapButton {
-      margin-top: 30px;
+    #swapButton, #resetButton {
+      margin-top: 20px;
       padding: 10px 20px;
       font-size: 1rem;
+    }
+    .controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
     }
   </style>
 </head>
@@ -71,7 +76,10 @@
       <button onclick="incrementScore('blue')">+ Goal</button>
     </div>
   </div>
-  <button id="swapButton" onclick="swapSides()">🔁 Swap Sides</button>
+  <div class="controls">
+    <button id="swapButton" onclick="swapSides()">🔁 Swap Sides</button>
+    <button id="resetButton" onclick="resetScores()">🔄 Reset Scores</button>
+  </div>
 
   <script>
     let orangeScore = 0;
@@ -95,6 +103,13 @@
       scoreboard.innerHTML = '';
       scoreboard.appendChild(blueDiv);
       scoreboard.appendChild(orangeDiv);
+    }
+
+    function resetScores() {
+      orangeScore = 0;
+      blueScore = 0;
+      document.getElementById('orangeScore').textContent = '0';
+      document.getElementById('blueScore').textContent = '0';
     }
   </script>
 </body>
