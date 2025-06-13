@@ -13,9 +13,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       padding: 20px;
+    }
+    .logo {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
     }
     .scoreboard {
       display: flex;
@@ -60,18 +65,21 @@
       margin-top: 20px;
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   </style>
 </head>
 <body>
+  <img src="possessionlogoLONG.png" alt="Possession Logo" class="logo" />
   <div class="scoreboard" id="scoreboard">
     <div class="player orange" id="orangePlayer">
-      <h2>Defense</h2>
+      <h2>Defense (14)</h2>
       <div class="score" id="orangeScore">0</div>
       <button onclick="incrementScore('orange')">+ Possession</button>
     </div>
     <div class="player blue" id="bluePlayer">
-      <h2>Offense</h2>
+      <h2>Offense (7)</h2>
       <div class="score" id="blueScore">0</div>
       <button onclick="incrementScore('blue')">+ Goal</button>
     </div>
