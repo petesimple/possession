@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <title>Possession Air Hockey</title>
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#111111" />
   <link rel="apple-touch-icon" href="icon-192.png" />
   <style>
+    html, body {
+      touch-action: manipulation;
+    }
     body {
       margin: 0;
       font-family: sans-serif;
@@ -40,6 +43,7 @@
       padding: 20px;
       text-align: center;
       cursor: pointer;
+      user-select: none;
     }
     .orange {
       background-color: orange;
